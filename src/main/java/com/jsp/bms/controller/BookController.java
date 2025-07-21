@@ -8,6 +8,7 @@ public class BookController {
 	
 	@RequestMapping("/savebook")
 	public String saveBook() {
+		System.out.println("save book method invoked");
 		return "Book Saved Successfully";
 	}
 
