@@ -1,5 +1,7 @@
 package com.jsp.bms.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,12 @@ public class BookController {
 	public Book saveBook(@RequestBody Book book) {
 		Book savedBook = br.save(book); //we will return the same object back to the postman
 		return savedBook;
+	}
+	
+	@ResponseBody
+	@GetMapping("/find-all-books")
+	public List<Book> findAllBooks(){
+		return br.findAll();
 	}
 
 }
